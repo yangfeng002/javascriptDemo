@@ -6,11 +6,41 @@
 </head>
 <body>
    <script type="text/javascript" charset="utf-8">
-       //push方法讲解：返回值为
+       //1.push方法讲解：在数组尾部添加元素，返回值为数组的长度，原数组改变
        var arr = [1,2,3];
        var rs = arr.push(4);
-       console.log(rs);
-       console.log(arr);
+      // console.log(rs);
+       //console.log(arr);
+      //2.pop方法:在元素尾部删除元素，返回值为删除的元素，元素组改变
+       var arr1 = [1,2,3];
+       var rs1 = arr1.pop();
+      // console.log(rs1);
+     //  console.log(arr1);
+      //3.迭代方法  every filter forEach map some
+       var arrTest = [1,2,4,2,5,6];
+       //3.1 every方法对于数组的每一个元素进行一个函数的运行，如果都返回true,那么返回true,反之则返回false
+       var everyReg = arrTest.every(function (item,index,array) {
+          return item>0
+       });
+      // console.log(everyReg);
+
+      //3.2 filter方法对于数组的每一个元素进行一个函数的运行，把过滤的结果返回
+       var filterRes = arrTest.filter(function (item,index,array) {
+           return item>2
+       });
+      // console.log(filterRes);
+
+      //3.3 forEach方法,对数组的每一项进行循环
+       var forEachRes = arrTest.forEach(function(item,index,array){
+          // console.log(item);
+       });
+
+       //3.4 map方法于数组的每一个元素进行一个函数的运行，经过函数运行后，将新的结果返回
+      var mapRes = arrTest.map(function(item,index,array){
+          return item;
+      });
+       console.log(arrTest);
+       console.log(mapRes);
 
    </script>
 </body>

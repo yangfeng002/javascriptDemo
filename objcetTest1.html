@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象的其他应用</title>
+    <script type="text/javascript" charset="utf-8">
+
+        // Global 全局的 终极的 （这个对象并不存在，无法new出来） 方法可以拿过来直接使用
+
+        var url = "http://www.txkt.com.cn";
+        //1.加密的方法：encodeURI /encodeURIComponent
+        var rs1 = encodeURI(url);   //一般不会对 : //等进行编码
+        var rs2 = encodeURIComponent(url);  //这个比较常用，对一些不合理的字符都会进行重新编码
+       // alert(rs1);
+        //alert(rs2);
+        //2.解密的方法  decodeURI  decodeURIComponent ()
+        var decodeRs1 = decodeURI(rs1);
+        var decodeRs2 = decodeURIComponent(rs2);
+        //3.eval  javascript解析器
+        //3.1对于字符串和数组可以直接放进去 eval(string) eval(stringArray)
+        var str = "var b =1;var a = 3;";
+        eval(str);
+        //alert(a+b)
+        var strArr = "[1,2,3]";
+        eval(strArr);
+        //alert(strArr)
+        //3.2针对字符串对象要特殊处理下  eval("("+stringObject+")")
+        var strObj = "{name:'test',age:20}";
+        var obj = eval("("+strObj+ ")");
+       // alert(obj.name)
+
+        //4.parseInt parseFloat 数据类型转换
+
+        var num1 = parseInt("10");
+        var num2 = parseFloat("20.5");
+       // alert(typeof num1);
+        //alert(typeof num2);//判断是什么类型
+
+        //5.escape  unescape  URI  编码处理
+        var name = "腾讯课堂";
+        var str2 = escape(name);
+       // alert(str2);
+        var str3 = unescape(str2);
+       // alert(str3);
+
+      //6.isNaN 判断是不是number类型
+
+     /*
+     * Math对象
+     * */
+    // 1.Math.random()比较常用 [0,1) 左闭右开区间
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

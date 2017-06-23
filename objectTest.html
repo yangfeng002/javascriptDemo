@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>object对象</title>
+    <script type="text/javascript" charset="utf-8">
+     /* 1.object是所有类的基类*/
+       // var obj = new Object();
+       var obj = {};//实例化一个对象
+       obj.name = "呵呵";
+       obj.age = 20;
+       obj.say = function(){
+           console.log("-----");
+       };
+      /* 2.delete是专门用来删除对象的属性的*/
+      //  delete obj.age;
+
+      /* 3.遍历对象 for in语句 attr表示属性的key值，取value值需要用[],obj.attr是无法取到值的*/
+     for(var attr in obj){
+       var key = attr;
+       var value = obj[attr];
+        //alert(key+"=="+value);
+     }
+      /* 4 常用的属性 */
+       // 1. constructor属性  用于保存创建的当前对象的函数
+        //console.log(obj.constructor);
+        //var arr = [];
+       // console.log(arr.constructor);
+     //2.hasOwnProperty（propertyName） 用于检测给定属性在对象中是否存在
+       var res =  obj.hasOwnProperty("age");
+       // alert(res)
+    // 3.propertyIsEnumerable(propertyName)  用于判断当前属性是否可以枚举
+       //alert(obj.propertyIsEnumerable("age"));
+
+        //4.toString()返回对象的字符串表示   toLocalString()  valueOf()返回对象的字符串、数组
+
+
+        //5. 数组的去重功能模拟  注意：js的特性，在js对象中，key永远是不会重复的
+          //方法：1.把数组转换成一个js对象  2.把数组中的值变成js对象中的key 3.把js对象再还原成数组
+          var arr = [2,1,2,10,2,3,5,5,1,10,13];
+
+           //数组转换成对象
+          function toObject(arr){
+            var obj = {};
+            var j;
+             for(var i= 0;j=arr.length,i<j;i++){
+                 obj[arr[i]] = true;
+             }
+              return obj;
+          }
+          //把对象转换为数组
+         function toArray(obj){
+            var arr = [];
+            for(var attr in obj){
+                //判断是否有该属性
+              if(obj.hasOwnProperty(attr)){
+                  arr.push(attr);
+              }
+            }
+           return arr;
+         }
+        function uniq(newArr){
+          return  toArray(toObject(newArr));
+        }
+
+        console.log(uniq(arr));
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

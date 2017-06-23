@@ -11,6 +11,7 @@
   可以存放任意类型，长度可以随意改变，隐式会调用toString()方法
   方法：
   1.位置   indexOf()  lastIndexOf()
+  2.迭代的方法  every  filter  forEach  map  some
 
 
 
