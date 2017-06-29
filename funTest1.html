@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>function要点</title>
+    <script type="text/javascript" charset="utf-8">
+        /*函数定义方式
+        * 要点：1. function语句式和字面量式比第3种方式执行效率高
+        *       2.function语句式和字面量式执行顺序的问题,对于第一种function语句式的优先解析，放到内存中
+        *       3.function语句式和字面量式是函数的作用域，而new方式是顶级作用域
+        *       4.function语句式和字面量式是静态的只被解析一次，而new方式是动态的
+        * */
+        // 1.funtion语句式
+        test1();
+        function test1(){
+
+        }
+       // 2.函数的字面量 ECMAScript
+        test2();
+        var test2 = function () {
+
+        };
+
+        //3.function 构造函数式
+        var test3 = new Function("a","b","return a+b;");
+
+       //this总是指向调用者
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
