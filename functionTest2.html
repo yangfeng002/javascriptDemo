@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数的call()方法和apply()方法</title>
+    <script type="text/javascript" charset="utf-8">
+       /* call() apply() 都是非继承来的方法    简单的用法：函数的参数传递和调用*/
+        //示例1
+        function sum(x,y){
+            return x+y;
+        }
+        function call1(num1,num2){
+            return sum.call(this,num1,num2);//将call1()方法绑定到sum函数上
+        }
+        function apply1(num1,num2){
+            return sum.apply(this,[num1,num2]);//将apply1()方法绑定到sum函数上
+        }
+       //alert(call1(10,20));
+
+       //2.call和apply()方法主要的应用：扩充作用域，也就是变换作用域,使对象和方法直接没有耦合关系
+        //示例2
+        window.color = "red";
+        var obj = {"color":"blue"};
+        function showColor(){
+            alert(this.color);
+        }
+        //showColor.call(this);//绑定的是window
+        //showColor.call(obj);//绑定的obj
+
+        //3.自定义对象  约定的规范：首字母大写就表示一个对象，小写表示一个普通的方法
+        function test1(a,b){
+          return a+b;
+        }
+        function Obj(x,y){
+            //对象属性赋值
+            this.x = x;
+            this.y = y;
+            return x*y;
+        }
+       //创建一个对象
+        var o = new Obj(10,20);
+        //alert(test1.call(o, o.x, o.y)); //o对象和test1对象没有什么关联，此处用call方法绑定，使o对象和test1方法之间低耦合
+
+     /* 模拟call方法绑定的实现
+      o.method = test1;
+       alert(o.method(o.x, o.y));
+       delete o.method;*/
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

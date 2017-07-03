@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>执行环境和作用域链</title>
+    <script type="text/javascript" charset="utf-8">
+         // 1.执行环境  window对象（最上层的执行环境）
+        var color1 = "blue";
+        function changeColor(){   //每一个函数都有一个执行环境
+            var color2 = "red";
+            function swapColor(){
+                var color3 = color2;
+                color2 = color1;
+                color1 = color3;
+            }
+        }
+         //这里只能访问color1
+       changeColor();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
