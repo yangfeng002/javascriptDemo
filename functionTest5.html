@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包的概念</title>
+    <script type="text/javascript" charset="UTF-8">
+       /*  var name = "xiao A";
+         var obj  = {
+             name:"xiao B",
+             getName: function () {
+                 return function (){
+                     return this.name;
+                 }
+             }
+         };
+        // alert(typeof obj.getName())//obj.getName()是一个函数类型，执行环境是全局的
+        alert(obj.getName()()); //此时obj.getName()()的值为"xiao A",因为根据执行环境作用域链的概念只会向上寻找*/
+
+
+     /*  var name = "xiao A";
+       var obj  = {
+           name:"xiao B",
+           getName: function () {
+               var o = this;//this总是指代的是调用它的对象
+               return function (){
+                   return o.name;
+               }
+           }
+       };
+      // alert(obj.getName()());//obj.getName()还是全局作用域，但是obj.getName()()调用的时候返回的是obj对象*/
+
+
+       // **1.闭包的概念：可以访问另外一个函数作用域中的变量的函数。  在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁
+       // 闭包类似于private的概念，起到保护变量的作用
+        //示例1
+        // 1级作用域
+        function f (x){
+           var temp = x;  //2级作用域
+           return function (x){  //3级作用域
+                temp+=x;
+                alert(temp);
+           }
+        }
+        var a = f(50);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

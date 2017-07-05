@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js垃圾回收机制</title>
+    <script type="text/javascript" charset="UTF-8">
+        /*
+        垃圾回收机制  有2种  1.标记方法  2.引用计数法
+        * */
+
+
+
+        /*块级作用域  在js中没有块级作用域的概念，只有函数执行完毕之后才会失效，所以使用for循环和if判断时要注意
+        * 在java c等高级程序语言中有块级作用域的概念
+        * */
+        /*function test(){
+           for(var i=1;i<=5;i++){
+             //alert(i)
+           }
+           //alert(i)
+        }
+        test();*/
+        //模仿块级作用域  js中()表示被立即执行的意思
+        function test(){
+            //匿名函数定义，放在()中模仿块级作用域，单独提出一块作用域，再添加一个()表示执行
+            (function () {
+               for(var i=1;i<=5;i++){
+                   alert(i);
+               }
+            })();
+          // alert(i); //此处报错
+        }
+        test();
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

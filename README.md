@@ -13,6 +13,9 @@
   1.位置   indexOf()  lastIndexOf()
   2.迭代的方法  every  filter  forEach  map  some
 
+4.垃圾回收机制  标记方法和引用计数法
+
+
 
 
 
