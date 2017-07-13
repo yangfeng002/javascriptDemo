@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js面向对象</title>
+    <script type="text/javascript" charset="UTF-8">
+        /*js中没有类，但是可以用代码模拟类*/
+        //1.第一种方法：工厂模式
+        function createPerson(name,sex,age){
+            var obj = new Object();
+            obj.name=name;
+            obj.sex= sex;
+            obj.age = age;
+            obj.sayName = function(){
+                alert(this.name)
+            };
+            return obj;
+        }
+        //var p1 = createPerson("zs","男",25);
+        //p1.sayName()
+
+        //2.第二种方式  构造函数形式    new Array  new Date   函数的第一个字母大写（类的模板）注意：这是最常用的
+        function Person(name,age,sex){
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.sayName = function(){
+                alert(this.name)
+            }
+        }
+        /*创建对象使用方式*/
+        // 2.1：当做构造函数来使用
+         var p2 = new Person("xiaoli",20,"女");
+        // p2.sayName()();
+        ///alert(p2 instanceof Person); //判断类型
+        //alert(p2.constructor ==Person) //构造器是不是Person
+
+        // 2.2 也可以当做普通方法来调用（当做普通函数去调用，相当于window对象）
+         Person("xiao3",10,"男");//这里相当于window.Person();所以可以直接调用name(window.name)
+        //alert(name)
+
+       //2.3 在另一个对象中调用 (使用call方法)
+        var o = new Object();
+        Person.call(o,"xiao4",15,"女");
+        alert(o.name);//此时o对象调用Person的name属性
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

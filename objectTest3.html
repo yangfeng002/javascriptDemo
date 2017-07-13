@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型的概念</title>
+    <script type="text/javascript" charset="UTF-8">
+        //构造函数模式固然好，但是有一定的缺陷，每次都会构造一次对象的方法，效率比较低
+        /*  function Person(name,age){
+            this.name = name;
+            this.age = age;
+           /!* this.sayName = function(){
+                alert(this.name)
+            }*!/
+            this.sayName = sayName;
+        }
+        function sayName(){
+            alert(this.name);
+        }
+        var p1 = new Person("test1",20);
+        var p2 = new Person("test2",15);
+        //alert(p1.sayName ==p2.sayName); //这里值为false,表明每次创建对象之后，都会重新创建一个sayName方法
+         */
+
+        /*prototype  创建每一个函数都有prototype属性，这个属性其实是一个指针, 而这个指针总是指向一个对象
+         * 这个对象的用途就是将特定的属性和方法包含在内，起到一个实例共享的作用
+         *  构造函数   原型对象  实例对象  关系
+         *
+        * */
+       // 构造函数.prototype =原型对象
+       //  原型对象.constructor = 构造函数
+       // isPrototypeOf()判断是不是谁的原型   getPrototypeOf()
+        //每次读取对象属性的时候，首先会执行一次搜索：搜索实例对象的属性，看看有没有，如果没有再去实例对象的原型中取搜索，如果有就返回，没有则返回undefined
+        function Person(name,age){
+
+        }
+        Person.prototype.name = "z3";
+        Person.prototype.age = 20;
+        Person.prototype.sayName = function () {
+
+        };
+      /*  var  obj = Person.prototype;
+        obj.name = "呵呵呵";
+        obj.age = 20;
+        var person1 = new Person();
+       // alert(person1.age);
+       // alert(obj.constructor);
+        alert(obj.isPrototypeOf(person1));*/
+
+        //in操作符 for-in   hasOwnPropertyOf()   判断属性是否属于原型对象或实例对象
+      /* var p1 = new Person();
+        //alert('name' in p1);
+        var p2  = new Person();
+        p2.name = "w5";*/
+       // alert('name' in p2);
+
+
+        /*实例
+        * 判断一个属性是不是属于原型对象，而不是属于实例对象
+        * */
+      /*  function hasPrototypeProperty(object,name){
+            return  !object.hasOwnProperty(name)  && name in object;
+        }
+
+        var p3 = new Person();
+       // p3.name = "ls";
+        hasPrototypeProperty(p3,'name');*/
+
+        /*ECMA5新特性  Object.keys()   getOwnPropertyNames*/
+        var p1=  new Person();
+        p1.name = "hh";
+        p1.age = 25;
+        var attributes = Object.keys(p1);
+        //alert(attributes)
+        var attributes2 = Object.keys(Person.prototype);
+        //alert(attributes2)
+        var attributes3 = Object.getOwnPropertyNames(Person.prototype);
+        alert(attributes3)
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
