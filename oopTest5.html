@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型深入讲解</title>
+    <script type="text/javascript" charset="UTF-8">
+       //原型对象的所有的属性和方法，被所有构造函数实例出来的对象共享,所以原型对象存在一定的弊端，有一个对象修改过属性或者方法，其他对象访问的内容都变了
+     /*  function Person(){
+
+       }
+       Person.prototype = {
+          constructor:Person,
+          name:'z3',
+          age:20,
+          friends:["李四","王五"],
+          sayName: function () {
+               alert("我的名字");
+           }
+       };
+       var p1 = new Person();
+       var p2 = new Person();
+       p1.friends.push("赵六");
+       alert(p1.friends);
+       alert(p2.friends);
+       */
+
+
+        /*
+        * 解决办法：1.组合使用原型和构造函数（这样不会出现修改公共属性和方法的问题）
+        */
+      /*  function Person(name,age,job,friends){
+            this.name = name;
+            this.age = age;
+            this.job = job;
+            this.friends = friends;
+        }
+       Person.prototype = {
+           constructor:Person,
+           sayName:function(){
+               alert(this.name);
+           }
+       };
+
+       var p1 = new Person("zs",20,"歌手",["李四","王五"]);
+       var p2 = new Person("李四",25,"boss",["赵六"]);
+       //alert(p1.friends);
+       //p1.sayName();
+      // alert(p2.friends);*/
+
+
+        //2.动态原型模式(让代码封装到一起)
+      /*  function Person(name,age,job,friends){
+            this.name = name;
+            this.age = age;
+            this.job = job;
+            this.friends = friends;
+            //动态原型模式
+            if(typeof this.sayName !="function"){
+                Person.prototype.sayName = function(){
+                    alert(this.name);
+                }
+            }
+        }*/
+
+        //3.稳妥构造函数式  （非常安全的环境中，外界无法访问,可以提供对外的方法访问）
+        // 要点：1）没有公共的属性  2）不能使用this关键字
+       function Person(name,age,job){
+           //创建一个对象
+           var obj = new Object();
+           var name = name;
+           obj.sayName = function(){
+               alert(name);
+           };
+          return obj;
+       }
+
+       var p1 = new Person("张三");
+       //alert(p1.name);
+       p1.sayName();
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

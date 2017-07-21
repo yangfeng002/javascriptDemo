@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型的作用</title>
+    <script type="text/javascript" charset="UTF-8">
+      /*
+      * 原型的作用：1.实例共享  2.扩展对象的属性和方法
+      * */
+       //实例1 模拟数组遍历多维数组（扩充对象的方法）
+        var arr = [1,2,3,[4,[5,[6]]]];
+        Array.prototype.each = function(fn){
+            try{
+                this.i || (this.i =0);  //这种写法为了避免i重复冲突，this指向调用对象
+                //当前数组长度大于0，
+                if(this.length>0 && fn.constructor ==Function){
+                    for(;this.i<this.length;this.i++){
+                       //判断是不是数组，如果是数组
+                        var e = this[this.i];
+                        //判断数组的每一项是否存在，并且判断是不是数组
+                        if(e && e.constructor==Array){
+                            //是数组，则递归再次调用
+                            e.each(fn);
+                        }else{
+                          //可以直接调用
+                            fn.call(e,e);
+                        }
+                    }
+                    this.i=null;
+                }
+
+            }catch(e){
+               //执行异常处理
+            }
+            return this;
+
+        }
+
+        //arr数组调用变量的方法
+        arr.each(function (item) {
+            alert(item)
+        })
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

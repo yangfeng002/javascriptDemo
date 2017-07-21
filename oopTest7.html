@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承深入讲解</title>
+    <script type="text/javascript" charset="UTF-8">
+           //混合继承的方式缺点：继承了2次父类的模板，继承了1次父类的原型对象
+
+        /*
+        * ---实现只继承1次父类的模板，1次父类的原型对象
+        * */
+           function Person(name,age){
+               this.name = name;
+               this.age = age;
+           }
+           Person.prototype =  {
+               //constructor:Person,//如果忘记填写
+               id:10,
+               sayHello: function () {
+                   alert("hello world");
+               }
+           };
+           //子类
+           function Boy(name,age,sex){
+               //采用call、apply方式 借用构造函数继承
+               //Person.call(this,name,age);//1.继承了父类
+               Boy.supClass.constructor.call(this,name,age);
+               this.sex = sex;
+           }
+           //实现方法
+           function extend(sup,sub){
+               //sup超类，sub子类
+               //目的：实现只继承父类的原型对象
+               var F = new Function();//1.创建一个空函数,目的是进行中转
+               F.prototype = sup.prototype;//2.实现空函数的原型对象和超类的原型对象转换
+               sub.prototype = new F(); //3.原型继承（F是空模板，所以没有实现继承模板对象）
+               sub.prototype.constructor = sub;//4.还原子类的构造器
+               //保存一下父类的原型对象：一方面方便解耦，一方面获得父类的原型对象
+               sub.supClass = sup.prototype;//5.自定义一个子类的静态属性，保存父类的原型对象
+               //判断父类的原型对象的构造器（加保险）
+               if(sup.prototype.constructor==Object.prototype.constructor){
+                   //还原父类构造器
+                   sup.prototype.constructor = sup;
+               }
+
+           }
+
+           //Boy.prototype = new Person();//2.实现了父类的原型的继承(继承了1次父类的模板，1次父类的原型对象)不采用
+           extend(Person,Boy);
+           //假设子类也存在sayHello方法,此时如果还是希望调用父类的方法应该怎么做呢？ Boy.supClass.sayHello.call(b);
+           Boy.prototype={
+               sayHello: function () {
+                   alert("hi javascipt");
+               }
+           };
+           var b = new Boy("hehe",20,"女");
+           alert(b.name);
+          // b.sayHello();
+         Boy.supClass.sayHello.call(b);
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

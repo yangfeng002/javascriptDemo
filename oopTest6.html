@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象继承</title>
+    <script type="text/javascript" charset="utf-8">
+        //js中怎么实现继承(原型链的方式)
+       /*
+       * 1.原型继承：特点是子类既继承了父类的模板，又继承了父类的原型对象
+       * */
+        //示例
+      /*  function Sup(name){
+            //父类
+            this.name = name;
+        }
+        //父类的原型
+        Sup.prototype = {
+            constructor:Sup,
+            sayName: function() {
+            alert("我是"+this.name);
+          }
+        };
+        //子类
+        function Sub(age){
+            this.age = age;
+        }
+
+       //让子类的原型=父类的实例
+        Sub.prototype = new Sup("张三");//实现了继承，
+       // alert(Sub.prototype.constructor);//打印的是父类的构造模板
+
+        var sub1 = new Sub();//这种不符合面向对象的情况,一般都是在子类创建对象的时候传递参数
+       //alert(sub1.name);//张三，继承了父类的属性
+       // sub1.sayName();*/
+
+
+      /*
+      * 2.类的继承：只继承父类的模板，不继承父类的原型
+      * */
+   /*  //父类
+     function Person(name,age){
+         this.name = name;
+         this.age = age;
+     }
+     Person.prototype =  {
+         constructor:Person,
+         id:10
+     };
+
+     //子类
+      function Boy(name,age,sex){
+          //采用call、apply方式继承Person的模板
+          Person.call(this,name,age);
+          this.sex = sex;
+      }
+
+        var b = new Boy("张三",20,"男");
+        //alert(b.name);//实现了继承
+        //alert(b.age);//实现了继承
+        //alert(b.sex);
+       // alert(b.id);//undefined，表示只继承了模板对象，没有继承原型对象
+    */
+
+     /*
+     * 3.原型继承+借用构造函数继承 = 混合继承
+     */
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype =  {
+            constructor:Person,
+            id:10
+        };
+        //子类
+        function Boy(name,age,sex){
+            //采用call、apply方式 借用构造函数继承
+            Person.call(this,name,age);//1.继承了父类的模板
+            this.sex = sex;
+        }
+        Boy.prototype = new Person();//2.实现了父类的原型的继承
+
+        var b = new Boy("李四",25,"男");
+        alert(b.name);
+        alert(b.id);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

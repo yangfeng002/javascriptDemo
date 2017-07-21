@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象</title>
+    <script type="text/javascript" charset="utf-8">
+        //简单原型
+        function Person(){
+
+        }
+        //采用字面量的形式,扩展属性和方法
+        Person.prototype = {
+           // constructor:Person,
+            name:"zs",
+            age:20,
+            sayName:function(){
+                alert("我是简单原型的方法");
+            }
+        };
+        var p1 = new Person();
+        //alert(p1.name);
+       // p1.sayName();
+
+       //alert(Person.prototype.constructor)
+
+       /* 1.ECMA5原型对象构造器重置的方法（FF4+ IE8+才支持） defineProperty()
+       *  有3个参数，第一个参数重置构造器的对象，第二个参数设置什么属性，第三个参数options配置项
+       * */
+      /* Object.defineProperty(Person.prototype,'constructor',{
+           enumerable:false,
+           value:Person
+       });
+       //遍历对象的属性
+       for(attr in p1){
+           alert(attr);
+       }*/
+       // alert(Person.prototype.constructor)
+
+       /*2.原型对象的动态属性
+       * 简单原型对象的使用顺序：必须在原型之后创建对象，原型对象的属性和方法才被访问
+       * */
+       function Officer(){
+
+       }
+        var off1 = new Officer();
+       Officer.prototype ={
+           constructor:Officer,
+           done:function(){
+               alert("我在做什么");
+           }
+       };
+       // off1.done(); //此处会报错
+       var off2 = new Officer();
+        off2.done();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
