@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设计模式---接口的概念</title>
+    <script type="text/javascript" charset="UTF-8">
+        /*javascript定义接口的三种方式*/
+
+        //1.注解描述方式
+         //优点：程序员可以有1个参考
+         //缺点：还是属于文档的范畴； 这种方式太松散，没有检查接口是否被完全实现 
+        /*
+
+        //2.属性监测方式
+         /*
+         *   interface Composite(){
+         *      function add(obj);
+         *      function remove(obj);
+         *      function update(obj);
+         *      function delete(obj);
+         *   }
+         */
+         //CompositeImpl implements Composite  FormItem
+         var CompositeImpl = function () {
+            //显示在类的内部，接收所实现的接口
+           //一般定义一个规范，在类的内部定义一个数组（名字要固定）
+             this.implementsInterfaces = ["Composite","FormItem"];
+
+         };
+
+        CompositeImpl.prototype = {
+            add:function (obj){
+                //do something
+                alert("add");
+            },
+            remove:function (obj){
+                //do something
+            },
+            update:function (obj){
+                //do something
+            },
+            delete:function(obj){
+              //do something
+            }
+        };
+        //监测的方法
+        function CheckCompositeImpl(instance){
+            //判断对象是否实现了所有的接口
+            if(!isImplements(instance,"Composite","FormItem")){
+                 throw new Error('Object does not implement a required interface');//抛出异常
+            }
+        }
+
+       //核心方法--公共具体的监测方法
+        function isImplements(object){
+            //arguments对象 获取函数的实际参数,从第2个开始，object就是传递的实例对象
+            for(var i = 1;i<arguments.length;i++){
+                //接收每一个接口的名称
+                var interfaceName = arguments[i];
+                //判断此方法到底找到没有
+                var interfaceFound = false;
+                for(var j=0;j<object.implementsInterfaces.length;j++){
+                    //判断自己定义的接口和传递进来的是否相同
+                    if(object.implementsInterfaces[j]==interfaceName){
+                        interfaceFound = true;
+                        break;//跳出所有的循环
+                    }
+                }
+                if(!interfaceFound){
+                    return false;//直接返回了
+                }
+
+            }
+            return true;
+        }
+
+       //测试例子
+        var c1 = new  CompositeImpl();
+        CheckCompositeImpl(c1);//把实例传递进去
+        c1.add();
+
+
+        //3.鸭式辨型方式
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

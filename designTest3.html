@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设计模式---接口的概念</title>
+    <script type="text/javascript" charset="UTF-8">
+        /*javascript定义接口的三种方式*/
+
+        //1.注解描述方式
+         //优点：程序员可以有1个参考
+         //缺点：还是属于文档的范畴； 这种方式太松散，没有检查接口是否被完全实现 
+        /*
+
+        //2.属性监测方式
+         /*
+         *   interface Composite(){
+         *      function add(obj);
+         *      function remove(obj);
+         *      function update(obj);
+         *      function delete(obj);
+         *   }
+         */
+
+
+        //3.鸭式辨型方式（最完美的实现javascript接口的方式）
+
+        //1.接口类 Interface实现多个接口
+        /*接口需要2个参数
+        * 参数1：接口的名称 string
+        * 参数2：接口方法的集合（Array）
+        * */
+        var Interface = function(name,methods){
+             //判断接口的参数个数
+             if(arguments.length!=2){
+                throw new Error("instance required 2 param");
+             }
+             this.name = name;
+             this.methods = [];//内置1个空数组对象，接收参数methods的方法名称
+             for(var i= 0,len = methods.length;i<len;i++){
+                 if(typeof methods[i]!=='string'){
+                    //不是string类型抛出一个异常
+                     throw new Error("the Instance method name must be a string!");
+                 }
+                 this.methods.push(methods[i]);
+             }
+
+        }
+
+        //2.准备工作 具体的实现类
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设计模式---接口的概念</title>
+    <script type="text/javascript" charset="UTF-8">
+        /*javascript定义接口的三种方式*/
+
+        //1.注解描述方式
+         //优点：程序员可以有1个参考
+         //缺点：还是属于文档的范畴； 这种方式太松散，没有检查接口是否被完全实现
+        /*
+        *   interface Composite(){
+        *      function add(obj);
+        *      function remove(obj);
+        *      function update(obj);
+        *   }
+        */
+
+        // CompositeImpl implements Composite
+        var CompositeImpl = function(){
+
+        };
+
+        CompositeImpl.prototype = {
+            add:function (obj){
+              //do something
+            },
+            remove:function (obj){
+                //do something
+            },
+            update:function (obj){
+                //do something
+            }
+        };
+        var c1 = new CompositeImpl();
+        var c2 = new CompositeImpl();
+        //alert(c1.add == c2.add);
+
+
+        //2.属性监测方式
+
+
+
+
+
+        //3.鸭式辨型方式
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
