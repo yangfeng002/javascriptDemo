@@ -44,11 +44,80 @@
                  this.methods.push(methods[i]);
              }
 
-        }
-
-        //2.准备工作 具体的实现类
+        };
 
 
+
+        //2.准备工作：
+
+        //2.1.实例化接口对象
+        var CompositeInterface = new Interface("CompositeInterface",["remove","add"]);
+        var FormItemInterface = new Interface("FormItemInterface",["update","select"]);
+
+        //2.2 定义具体的实现类  CompositeImpl  implements
+        var CompositeImpl = function () {
+            
+        };
+        //2.3 实现接口的方法
+        CompositeImpl.prototype = {
+            add:function (obj){
+                //do something
+                alert("add");
+            },
+            remove:function (obj){
+                alert("remove");
+                //do something
+            },
+            update:function (obj){
+                //do something
+                alert("update")
+            },
+            select:function(obj){
+                //do something
+                alert("delete");
+            },
+            set: function () {
+                
+            }
+            
+        };
+
+        //3.检验接口里的方法
+        //如果检验成功，不做任何操作，如果有不通过的，抛出一个异常
+        //这个方法的主要目的就是监测方法的
+        Interface.ensureImplements = function (object) {
+            //首先判断参数的个数是不是有2个参数
+            if(arguments.length<2){
+                throw new Error("Interface.ensureImplements method constructor must be >=2");
+            }
+
+            //处理接口
+            for(var i= 1,len = arguments.length;i<len;i++){
+                var instanceInterface = arguments[i];
+                if(instanceInterface.constructor!==Interface){
+                   //检验接口的名称
+                    throw new Error('the argument constructor not be Interface Class');
+                }
+                //循环接口实例对象里面的每一个方法
+                for(var j=0;j<instanceInterface.methods.length;j++){
+                    //用一个临时的变量接收方法的名称（注意是字符串）
+                   var methodName = instanceInterface.methods[j];
+                    //判断接口实现类CompositeImpl是不是有这个方法，并且方法是否为函数
+                   if(!object[methodName] || typeof object[methodName]!=='function'){
+                      throw new Error("the '"+methodName+"' method is not found");
+                   }
+
+                }
+
+            }
+
+
+        };
+
+        var c1 = new CompositeImpl();
+        //如果不通过会报异常，代码接着往下面走
+        Interface.ensureImplements(c1,CompositeInterface,FormItemInterface);
+        c1.add();
 
 
     </script>
