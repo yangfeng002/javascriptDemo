@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单函数的链式调用</title>
+    <script type="text/javascript" charset="UTF-8">
+
+        //模拟jquery底层链式调用（jquery底层使用的块级作用域，程序启动的时候，里面的代码就执行了）
+        //块级作用域
+        //特点1：程序启动的时候，里面的代码就执行了
+        //alert("程序启动了");
+        //特点2：内部的成员变量外部无法访问（除了没有使用var定义的，没有使用var定义的是全局变量）
+        //var a = "测试";
+
+        (function(window,undefined){
+             //注意：外界最常用的$符号，返回到外界，在大型程序中，使用 "_" 作为私有的对象（这是规范）
+             function _$(arguments){
+
+             }
+
+            //在Function类上扩展一个可以实现链式编程的方法
+            Function.prototype.method = function (methodName,fn) {
+                  this.prototype[methodName] = fn;
+                  return this;
+            };
+
+
+            //在_$对象的原型上添加一些方法
+            _$.prototype = {
+                constructor:_$,
+                addEvent: function () {
+                    alert("addEvent");
+                  return this;
+                },
+                setStyle:function(){
+                    alert("setStyle");
+                   return this;
+                }
+
+            };
+
+            //注册一个$全局变量,绑定在window对象上
+            window.$ = _$;
+            
+            //初始化方法，类似$(function(){})
+            _$.onReady = function (fn) {
+                //1.实例化_$对象，真正的注册到window上
+                window.$ = function (arguments) {
+                   return new _$(arguments);
+                };
+                //2.执行传递进来的代码
+                fn();
+
+                //3.实现链式编程
+                _$.method("addEvent",function(){})
+                        .method("setStyle",function(){});
+            }
+
+
+        })(window);//这里表示把window对象传递方法内部
+
+        $.onReady(function () {
+            //alert(111);
+            $("#ip").addEvent().setStyle();
+        })
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

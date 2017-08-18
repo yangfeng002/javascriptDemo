@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单函数的链式调用</title>
+    <script type="text/javascript" charset="UTF-8">
+      //1.简单函数的链式调用
+      /*  function Dog(){
+            this.eat = function () {
+                alert("dog is eating");
+                return this;
+            };
+            this.run = function () {
+                alert("dog is running");
+                return this;
+            };
+            this.sleep = function () {
+                alert("dog is sleeping");
+                return this;
+            }
+
+        }
+        var d1 = new Dog();
+        d1.eat().run().sleep();//链式编程*/
+
+
+       //2.模拟jquery底层链式调用（jquery底层使用的块级作用域，程序启动的时候，里面的代码就执行了）
+      //块级作用域
+      //特点1：程序启动的时候，里面的代码就执行了
+      //alert("程序启动了");
+      //特点2：内部的成员变量外部无法访问（除了没有使用var定义的，没有使用var定义的是全局变量）
+      //var a = "测试";
+
+       (function(window,undefined){
+
+       })(window);
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

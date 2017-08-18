@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>单体设计模式</title>
+</head>
+<script type="text/javascript" charset="UTF-8">
+      /*单体模式 singleton  4种 ---简单单体、闭包单体、惰性单体    */
+
+    //1.简单单体 ----划分名称空间（区分代码）
+   /* var Singleton = {
+        attr1:true,
+        attr2:true,
+        method1: function () {
+            alert("method1");
+        },
+        method2: function () {
+            alert("method2");
+        }
+    };*/
+      // alert(Singleton.attr1)
+     // 划分名称空间（区分代码）
+        /*var FY = {};
+        FY.Singleton = {
+            attr1:true,
+            attr2:true,
+            method1: function () {
+                alert("method1");
+            },
+            method2: function () {
+                alert("method2");
+            }
+        }*/
+
+    //2.借助闭包创建单体   闭包的主要目的是保护数据  ()里面放函数表示立即执行，如果执行一个方法那么再调用一下，就是(function(){})()
+   /* var FY = {};//名称空间
+    FY.Singleton = (function(){
+         //添加自己的私有成员变量
+        var al = true;
+        var a2 =10;
+        var f1 = function(){
+          alert("方法1");
+        };
+        var f2 = function () {
+            alert("方法2");
+        };
+
+        //把块级作用域的结果赋值给Singleton对象
+        return {
+            attr1:al,
+            attr2:a2,
+            method1: function () {
+               return f1();
+            },
+            method2: function () {
+               return f2();
+            }
+        };
+    })();
+
+      FY.Singleton.method1();*/
+
+    //3.惰性单体 (和闭包单体有相似的地方)底层使用比较多
+  /*  var Ext = {};
+    Ext.Base = (function(){
+       //定义私有变量，控制返回的数据
+        var uniqInstance;//undefined
+
+        //初始化变量的方法
+        function init(){
+            //定义私有成员变量
+            var a1 = true;
+            var a2 =10;
+            var fn1 = function(){
+                alert("fn1方法");
+            };
+            var fn2 = function () {
+                alert("fn2方法");
+            };
+            return {
+                attr1:a1,
+                attr2:a2,
+                method1:function(){
+                    return fn1();
+                },
+                method2:function(){
+                    return fn2();
+                }
+            }
+        }
+
+        return {
+           getInstance: function () {
+              if(!uniqInstance){
+                 uniqInstance = init();//返回的是1个对象
+              }
+               return uniqInstance;
+           }
+        }
+
+    })();
+   //alert(Ext.Base.getInstance().attr1);*/
+
+    //4.分支单体 （判断程序的分支<浏览器差异的监测>）
+    var Ext = {};
+    var def = true;
+    Ext.More =(function () {
+        var objA ={//火狐浏览器配置的属性
+           attr1:"FF属性1"
+
+        };
+        var objB ={//IE浏览器内部配置的属性
+            attr1:"IE属性1"
+        };
+        return def?objA.attr1:objB.attr1;
+    })()
+   // alert(Ext.More)
+
+</script>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设计模式---工厂模式</title>
+    <!--引入的核心js公共文件-->
+    <script type="text/javascript" charset="UTF-8" src="lib/commonUtil.js"></script>
+    <script type="text/javascript" charset="UTF-8">
+
+        //粗粒度和细粒度
+        /*
+        万事万物皆对象  你想要什么车-- 商店---卖车 ---生产车 ---factory
+        * */
+
+       //创建一个工厂环境
+       //卖车的商店  super Class
+        // abstract Class  抽象类  this CarShop is an abstract Class
+       function CarShop(){}
+       //原型对象上共享方法
+       CarShop.prototype = {
+           constructor:CarShop,
+           sellCare:function(type){
+             /*  var car = CarFactory.createCar(type);
+               return car;*/
+               this.abstractSellCar(type);
+           },
+           abstractSellCar: function () {
+               throw new Error("this method is abstract");
+           }
+       };
+
+       //Benz 4s店 sub Class
+        function BenzCarShop(){}
+        FY.extend(CarShop,BenzCarShop);
+        BenzCarShop.prototype = {
+            constructor:BenzCarShop,
+            sellCar: function (type) {
+               /* var car = CarFactory.createCar(type);
+                return car;*/
+                var car;//声明一个变量
+                var types= ['Benz'];
+                for(var t in types){
+                    if(types[t]===type){
+                       car = CarFactory.createCar(type);
+                    }else{
+                     alert("没有你要买的型号！");
+                    }
+                }
+                return car;
+            }
+        };
+
+      //Bmw 4s店 sub Class
+        function BmwCarShop(){}
+        FY.extend(CarShop,BmwCarShop);
+        BmwCarShop.prototype = {
+            constructor:BmwCarShop,
+            sellCar: function (type) {
+                var car;//声明一个变量
+                var types= ['Bmw'];
+                for(var t in types){
+                    if(types[t]===type){
+                        car = CarFactory.createCar(type);
+                    }else{
+                        throw new Error("没有你要买的型号");
+                    }
+                }
+                return car;
+            }
+        }
+
+       //生产车的工厂，目的就是为了生产车 (单体模式)
+        var CarFactory = {
+          createCar: function (type) {
+              //这里是动态工厂模式
+              var car = eval('new  '+type+'()');//声明一个变量
+              //检验一下car有没有实现CarInterface接口
+              FY.Interface.ensureImplements(car,CarInterface);
+              return car;
+          }
+
+        };
+
+      //接口对象的实例
+       var CarInterface = new FY.Interface('CarInterface',['start','run']);
+
+
+
+       //superClass(让子类继承该超类)
+       function BaseCar(){}
+       BaseCar.prototype = {
+           constructor:BaseCar,
+           start: function () {
+               alert(this.constructor.name+"start");
+           },
+           run: function () {
+               alert(this.constructor.name+"run");
+           }
+       };
+      //subClass  benz bmw audi  注意：子类先继承父类，子类再扩展自己特有的方法
+        //奔驰车
+       function Benz(){}
+       FY.extend(BaseCar,Benz);
+       //原型 用继承的方法来实现
+       Benz.prototype.driveBenz = function () {
+           alert("drive Benz");
+       }
+        //宝马车
+       function Bmw(){}
+       FY.extend(BaseCar,Bmw);
+      //奥迪车
+       function Audi(){}
+       FY.extend(BaseCar,Audi);
+
+
+    //代码实现
+ /*  var shop = new CarShop();
+   var car = shop.sellCare("Benz");
+   car.start();
+   car.run();
+   car.driveBenz();*/
+    var shop1 = new BenzCarShop();
+    var car1 = shop1.sellCar("Benz");
+    car1.run();
+
+    var shop2 = new BmwCarShop();
+    var car2 = shop2.sellCar("Bmw");
+    car2.run();
+    </script>
+</head>
+<body>
+工厂模式是生产对象，实现解耦
+</body>
+</html>

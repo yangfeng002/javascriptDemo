@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设计模式---工厂模式</title>
+    <!--引入的核心js公共文件-->
+    <script type="text/javascript" charset="UTF-8" src="lib/commonUtil.js"></script>
+    <script type="text/javascript" charset="UTF-8">
+       //创建一个工厂环境
+       //卖车的商店
+       function CarShop(){}
+       //原型对象上共享方法
+       CarShop.prototype = {
+           constructor:CarShop,
+           sellCare:function(type){
+               //卖车的方法
+               var car;//声明一个变量
+               switch (type){
+                   case "Benz":car = new Benz(); break;
+                   case "Bmw":car = new Bmw();   break;
+                   case "Audi":car = new Audi(); break;
+                   default:car= 'not buy it';
+               }
+               //检验一下car有没有实现CarInterface接口
+               FY.Interface.ensureImplements(car,CarInterface);
+               return car;
+
+           }
+       };
+       var CarInterface = new FY.Interface('CarInterface',['start','run']);
+
+       //superClass(让子类继承该超类)
+       function BaseCar(){}
+       BaseCar.prototype = {
+           constructor:BaseCar,
+           start: function () {
+               alert(this.constructor.name+"start");
+           },
+           run: function () {
+               alert(this.constructor.name+"run");
+           }
+       };
+
+
+      //Class  benz bmw audi  注意：子类先继承父类，子类再扩展自己特有的方法
+       function Benz(){}
+       FY.extend(BaseCar,Benz);
+       //原型 用继承的方法来实现
+       Benz.prototype.driveBenz = function () {
+           alert("drive Benz");
+       }
+     /* Benz.prototype = {
+          constructor:Benz,
+          driveBenz: function () {
+              alert("drive Benz");
+          }
+        /!*  run: function () {
+              alert("benz run");
+          },
+          start: function () {
+              alert("benz start");
+          }*!/
+      };*/
+
+       function Bmw(){}
+       FY.extend(BaseCar,Bmw);
+       Bmw.prototype = {
+           driveBmw: function () {
+               alert("drive Bmw");
+           }
+          /* run: function () {
+               alert("Bmw run");
+           },
+           start: function () {
+               alert("Bmw start");
+           }*/
+       };
+       function Audi(){}
+       FY.extend(BaseCar,Audi);
+       Audi.prototype = {
+           driveAudi: function () {
+               alert("drive Audi");
+           }
+          /* run: function () {
+               alert("Audi run");
+           },
+           start: function () {
+               alert("Audi start");
+           }*/
+       };
+
+    //代码实现
+   var shop = new CarShop();
+   var car = shop.sellCare("Benz");
+   car.start();
+   car.run();
+   car.driveBenz();
+
+    </script>
+</head>
+<body>
+工厂模式是生产对象，实现解耦
+</body>
+</html>
