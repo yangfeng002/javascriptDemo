@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设计模式-桥接模式</title>
+    <!--引入jquery文件-->
+   <script type="text/javascript" charset="UTF-8" src="lib/jquery.min.js"></script>
+    <!--引入的核心js公共文件-->
+    <script type="text/javascript" charset="UTF-8" src="lib/commonUtil.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        //桥接模式：主要作用就是把抽象和显示分离来，它们可以完全独立化。
+        // 应用场景：就是事件监听返回机制（用户点击按钮向服务器端发送消息）
+
+        //传统的模式
+      /*  $(function () {
+            //前台业务逻辑
+            var btn = document.getElementById("btn");
+            //var btn = $("#btn");
+            FY.EventUtil.addHandler(btn,'click',sendReq);
+        });
+
+        //后台处理的函数
+       function sendReq(){
+         //aja请求
+           //alert("后台返回"+this.value);
+           alert("后台返回"+this.value);
+       }*/
+
+        //采用桥模式
+        $(function () {
+            //1.前台业务逻辑
+            var btn = document.getElementById("btn");
+            //var btn = $("#btn");
+            FY.EventUtil.addHandler(btn,'click',bridgeHandler);
+        });
+
+        //利用桥模式
+        function bridgeHandler(){
+            var msg = this.value;
+            sendReq(msg);
+        }
+
+
+        //2.后台逻辑单元
+        function sendReq(msg){
+            //aja请求
+            //alert("后台返回"+this.value);
+            alert("发送了数据："+msg);
+        }
+
+
+    </script>
+</head>
+<body>
+  <input type="button" value="我是数据" id="btn"/>
+</body>
+</html>

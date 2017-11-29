@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设计模式-桥接第2种模式</title>
+    <script type="text/javascript" charset="utf-8">
+        //桥模式：特权函数
+      /*  var PublicClass = function () {
+            var name = "张三";
+            this.getName = function () {
+                return name;
+            }
+        };
+        var p1 = new PublicClass();
+        //alert(p1.name);//无法访问
+       alert(p1.getName());//桥模式，可以访问私有变量*/
+
+       //
+     /* var PublicClass= function () {
+          var privateMethod = function () {
+             alert("这是一个很复杂的操作");
+          };
+
+          //通过特权函数去访问这个私有的单元
+          this.bridge = function () {
+              privateMethod();
+          }
+      }
+      var p2= new PublicClass();
+      p2.bridge();*/
+
+       //桥模式把多个单体组合在一起
+       var Class1 = function (a,b,c) {
+           this.a = a;
+           this.b = b;
+           this.c =c;
+
+       };
+        var Class2 = function (d,e) {
+            this.d= d;
+            this.e = e;
+        };
+        var bridge = function (a,b,c,d,e) {
+            this.class1= new Class1(a,b,c);
+            this.class2 = new Class2(d,e);
+
+        };
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
