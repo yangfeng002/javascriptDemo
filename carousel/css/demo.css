@@ -1,0 +1,55 @@
+/* 
+*Created by fengyang on 2017/11/30
+**/
+* {
+  padding: 0px;
+  margin: 0px;
+}
+body html {
+  max-width: 100%;
+  max-height: 100%;
+}
+.box-container #igs .ig {
+  position: absolute;
+}
+.box-container .btn {
+  position: absolute;
+  height: 90px;
+  width: 60px;
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  /*垂直居中实现*/
+  line-height: 90px;
+  text-align: center;
+  font-size: 40px;
+  cursor: pointer;
+  top: 155px;
+  /* display: none;*/
+}
+.box-container .btn1 {
+  left: 10px;
+}
+.box-container .btn2 {
+  left: 830px;
+}
+.box-container #tabs {
+  position: absolute;
+  top: 340px;
+  left: 315px;
+}
+.box-container #tabs .tab {
+  float: left;
+  color: #666;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin-right: 10px;
+  background: #fff;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.box-container #tabs .bg {
+  background: #cc8aa3;
+  color: #fff;
+}
