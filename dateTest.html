@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试时间</title>
+    <script>
+       /* (function isLastDay() {
+             var date = new Date();//新建日期对象
+             var currDay = date.getDate();//获取当前天数
+             var currentMonth=date.getMonth();
+             var nextMonth=++currentMonth;
+             var nextMonthFirstDay=new Date(date.getFullYear(),nextMonth,1);
+             var oneDay=1000*60*60*24;
+             var lastDay =  new Date(nextMonthFirstDay-oneDay).getDate();//当月最后一天
+             if(currDay==lastDay){
+                 console.log(currDay+"=="+lastDay);
+                 flag = true;//相当于全局变量
+                 return flag;
+             }else{
+                 console.log(currDay+"=="+lastDay);
+                 flag = false;//相当于全局变量
+                 return flag;
+             }
+        })();
+　　　　console.log(flag);　*/
+       var jobDate = "20171218";
+       (function test(){
+           var y,m,d,date,day,result;
+           if(jobDate && jobDate.length>=8){
+               y = jobDate.substring(0,4);
+               m = jobDate.substring(4,6);
+               d = jobDate.substring(6,8);
+               date = new Date(y,m-1,d);
+               day = date.getDay();
+               if(day=="0"){
+                   result = "周末";
+               }else if(day=="6"){
+                   result = "周六";
+               }else{
+                   result = "工作日";
+               }
+               return result;
+           }else{
+               throw new Error("日期格式不正确!");
+           }
+       })(jobDate);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

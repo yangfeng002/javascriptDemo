@@ -1,0 +1,62 @@
+/* 
+*Created by fengyang on 2017/12/4
+**/
+@charset "UTF-8";
+/*手风琴样式*/
+*{
+  padding: 0;
+  margin: 0;
+}
+body,html{
+  max-height: 100%;
+  max-width: 100%;
+}
+.pics{
+   width: 1100px;
+   height: 430px;
+   margin-top: 70px;
+  border: 1px solid #ddd;
+   ul{
+     li{
+       list-style: none;
+       float: left;
+       width: auto;
+       height: 429px;
+       a{
+         text-decoration: none;
+         .txt{
+           background-color: #000;
+           background: rgba(0,0,0,.5);
+           height: 429px;
+          /* width: 100px;*/
+           p{
+             float: left;
+             color: #fff;
+             /*文字实现竖排，让字体大小和宽度相等即可*/
+             font-size: 14px;
+             width: 14px;
+             padding: 25px 25px 0 20px;
+           }
+         }
+       }
+
+       &.pic1{
+          background: #ff4400;
+          width:100px;
+       }
+       &.pic2{
+         background: #ab99ff;
+         width:100px;
+       }
+       &.pic3{
+         background: #bbffcd;
+         width:100px;
+       }
+       &.pic4{
+         background: #fff6ba;
+         width:789px;
+       }
+     }
+
+   }
+}

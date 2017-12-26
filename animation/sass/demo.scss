@@ -1,0 +1,34 @@
+@charset "UTF-8";
+/*
+*Created by fengyang on 2017/11/30
+**/
+html,body{
+   max-height: 100%;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+}
+.box-container{
+   #bird{
+     position: absolute;
+   }
+   .dir_37{
+      //向左
+      transform:rotateY(-180deg);
+   }
+   .dir_38{
+      //向上
+      //transform:skewY(-30deg);
+      transform:rotate(-30deg);
+   }
+   .dir_39{
+      //向右
+      //transform:scaleY(180);
+   }
+   .dir_40{
+      //向下的样式
+     /* transform:skewY(30deg);*/
+      transform:rotate(30deg);
+   }
+}
+
