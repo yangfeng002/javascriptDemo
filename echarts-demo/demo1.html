@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>echarts地图-demo</title>
+    <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="js/china.js"></script>
+</head>
+<body>
+  <div id="main" style="height: 400px;width: 50%;overflow: auto;"></div>
+</body>
+<script>
+    var myChart = echarts.init(document.getElementById('main'));//获取绘图位置对象
+    var option = {
+        title: {
+            text: '天气情况统计',
+            subtext: '虚构数据',
+            left: 'center'
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            bottom: 10,
+            left: 'center',
+            data: ['西凉', '益州','兖州','荆州','幽州']
+        },
+        series : [
+            {
+                type: 'pie',
+                radius : '65%',
+                center: ['50%', '50%'],
+                selectedMode: 'single',
+                selectedOffset:20,
+                data:[
+                    {value:1548, name: '幽州'},
+                    {value:535, name: '荆州'},
+                    {value:510, name: '兖州'},
+                    {value:634, name: '益州'},
+                    {value:735, name: '西凉'}
+                ],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+
+    myChart.on("click", function (param){
+        console.log(param);
+    });
+    myChart.setOption(option);
+</script>
+</html>

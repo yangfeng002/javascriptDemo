@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>echarts地图-demo</title>
+    <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="js/china.js"></script>
+</head>
+<body>
+  <div id="main" style="height: 600px;width: 60%;overflow: auto;"></div>
+</body>
+<script>
+    //全局变量
+    var selectedName = "";
+    var myChart = echarts.init(document.getElementById('main'));//获取绘图位置对象
+    var dataArr1 = [{
+        "name": "上海",
+        "value": "67"
+    }, {
+        "name": "云南",
+        "value": "20"
+    }];
+    //配置
+    var option = {
+        title: {
+            text: '全国热力图',
+            x: 'left',
+            y: 'top'
+        },
+       /* legend: {
+            orient: 'vertical',
+            top:70,
+            left: 'left',
+            data:['pv']
+        },*/
+        tooltip: {
+            trigger: 'item',
+            formatter: function (params, ticket, callback) {
+                //console.log(params);
+                if(params!="南海诸岛"){
+                    var str = params.name + '<br>';
+                    /* for (var i = 0, l = params.length; i < l; i += 1) {
+                         str += '<span style="display: inline-block;margin-right:5px;' +
+                             'width: 10px;height: 10px;border-radius: 5px;background-color: ' +
+                             '' + params[i].color + '"></span>' + params[i].seriesName +
+                             '：' + params[i].value;
+
+                         str += params[i].seriesName === '占比' ? '%' : '<br>'
+                     }
+     */
+                    return str;
+                }else{
+                    return '';
+                }
+
+            }
+        },
+        dataRange: {
+            min: 0,
+            max: 4000,
+            x: 'left',
+            y: 'bottom',
+            text: ['高', '低'], // 文本，默认为数值文本
+            calculable: false,
+            splitNumber: 0,
+            color: ['#17579D', '#7095DB', '#9DB6E8', '#C6D8F5']
+        },
+        roamController: {
+            show: true,
+            x: 'right',
+            mapTypeControl: {
+                'china': true
+            }
+        },
+        series: [{
+            name: 'pv',
+            type: 'map',
+            left:60,
+            mapType: 'china',
+            roam: true,
+            itemStyle: {
+                normal: {
+                    label: {
+                        show: false
+                    }
+                },
+                emphasis: {
+                    label: {
+                        show: true
+                    }
+                }
+            },
+            data:dataArr1
+        }
+        ]
+    };
+
+    myChart.on("click", function (param){
+        //console.log(param);
+        if(param.value){
+            //此时才展示右侧数据
+            if(param.name ==selectedName){
+                selectedName = "";
+                alert("展示全国数据");
+            }else{
+                selectedName = param.name;
+                alert("展示当前省份的数据");
+            }
+
+        }
+
+    });
+    myChart.setOption(option);
+
+</script>
+</html>
