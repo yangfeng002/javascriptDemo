@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象基础复习</title>
+    <script type="text/javascript" charset="UTF-8">
+        /*有些知识点可以记一下*/
+          //在js中，对象就是键值对的集合。不同于java c++语言
+          //复合类型  Array Object Function String Boolean  Number  Regexp  Math  Date  9种
+          //判断某个方法是否存在可以  document.getElementByName  不用带圆括号
+
+           //in关键字用法,1）用在for循环中 2）判断某个对象是否有某种属性
+           var obj = {"name":"张三","age":15};
+           //console.log("name" in obj);//true
+          // console.log("test" in obj);//false
+
+           //创建对象可以使用new与字面量  （new 创建对象可以复用，而字面量不可以复用）
+        /*
+        *重要：值类型  引用类型 两个重要的概念
+        *   按值传递：就是将变量的数据完整拷贝一份，传递给新的变量
+        *   引用类型：表示变量存储的是数据的地址（引用）
+        * */
+        var num = 123;
+        var num2 = num;//按值传递
+        //console.log("num="+num+" num2="+num2);
+        num = 1;
+        //console.log("num="+num+" num2="+num2);
+
+       var o = {n:20};
+       var o2 = o; //表示内存中只有一个数据对象，将o复制一份，赋值给o2, o和o2同时指向数据
+        //console.log("o.n="+o.n+" o2.n="+o2.n);
+        o.n=1;
+        //console.log("o.n="+o.n+" o2.n="+o2.n);
+
+       //逻辑中断
+      function fn(num) {
+         //num存在则打印num值，不存在则打印无参数
+
+          //方式1  比较类型和值
+          /*if(num!==undefined){
+              console.log(num);
+          }else{
+              console.log('无参数');
+          }*/
+
+          //方式2  如果是0的话会有问题，
+          /*if(num){
+
+          }else{
+              console.log('无参数');
+          }*/
+          //方式3：三元运算符
+
+          //**方式4：简便的方式
+          num = num || "没有参数";
+          console.log(num);
+
+      }
+      //fn(123);
+      //fn();
+      //fn(0);0
+
+
+     /*
+     * delete运算符用法  boolean(返回值)   delete 数据
+     * 1.删除一个数组中的某个元素（并不会改变数组的长度，而是把删除的索引位置变成undefined）
+     * 2.删除一个对象的某个属性或者方法
+     * 3.删除一个没有用var声明的变量
+     *
+     * */
+     //删除数组
+     var arr = [0,1,2,3];
+     delete arr[2];
+
+     //删除对象的属性
+       var obj = {"name":"tom"};
+       var isTrue = delete obj.name;
+
+       /*
+       *如果出现错误，代码不会向下执行。所以有些时候错误需要处理的，但又不清楚在这里会不会报错
+       * try-catch finally 处理了之后，后面的代码会继续执行
+       *    try{
+       *    }catch(e){
+       *    }finally {
+               //可选的，无论是否出现错误，最后都会执行的代码块
+           }
+
+         *  自己抛出异常-----
+         *  throw new Error('错误消息')
+         *
+       * */
+      /* function test1(){
+           try{
+               //可能出现错误的代码
+               console.log(test);
+           }catch(e){
+               //出现错误才会执行
+              //console.log("test未定义");
+              console.log(e);
+           }
+           console.log(123);
+       }
+       test1();
+       test1();*/
+
+      function fnError() {
+          //自定义错误
+         throw new Error('我是一个自定义错误');
+      }
+      function fnc() {
+          fnError();
+      }
+        fnc();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

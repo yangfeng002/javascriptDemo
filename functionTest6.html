@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数测试复习</title>
+    <script type="text/javascript" charset="UTF-8">
+        /*函数的创建有3中形式*/
+
+        /*方式1：声明式函数---是全局的(注意：声明式函数不允许出现在表达式中)
+        * js代码执行：1.预解析（先把代码读入到内存中）2.一句一句执行代码
+        * */
+
+        /*fnc();
+        function fnc() {
+            console.log("测试声明式函数");
+        }*/
+
+        /*方式2：函数的字面量函数  Lambda表达式
+        * 凡是将数据和运算符号连接起来有值的式子就是表达式
+        * 1  1+2  new Date()都是表达式，表达式加分号就是语句  例如var a = 10;
+        *  var a;  a=123是表达式
+        *
+        * */
+       /*  fn();//汇报错---只有执行到了才能调用
+        var fn = function () {
+            
+        }*/
+
+       //代码在一句句往下执行的时候，声明式的是忽略的
+       var a;
+　　　　if( false ){
+           function f() {
+               console.log(123);
+           }
+        }
+       f();
+
+        /*
+        * 方式3：new Function
+        * */
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
