@@ -1,0 +1,174 @@
+{
+  "result": "success",
+  "data": {
+    "name": "StartPoint",
+    "value": 0,
+    "children": [
+      {
+        "name": "cn.migu.shanpao.pedometer.StepScreenLockActivity",
+        "value": 855,
+        "children": [
+          {
+            "name": "cn.migu.shanpao.pedometer.StepScreenLockActivity",
+            "value": 137,
+            "children": [
+              {
+                "name": "cn.migu.shanpao.pedometer.StepScreenLockActivity",
+                "value": 37,
+                "children": [
+                  {
+                    "name": "其他",
+                    "value": 15,
+                    "children": [
+                      {
+                        "name": "其他",
+                        "value": 6,
+                        "children": [
+
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.RunningAndRidingActivity",
+                    "value": 1,
+                    "children": [
+                      {
+                        "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.RunningAndRidingActivity",
+                        "value": 1,
+                        "children": [
+
+                        ],
+                        "nick": ""
+                      }
+                    ],
+                    "nick": ""
+                  },
+                  {
+                    "name": "com.imohoo.shanpao.ui.home.HomeActivity",
+                    "value": 1,
+                    "children": [
+
+                    ],
+                    "nick": "首页"
+                  }
+                ],
+                "nick": ""
+              }
+            ],
+            "nick": ""
+          },
+          {
+            "name": "com.imohoo.shanpao.ui.home.HomeActivity",
+            "value": 25,
+            "children": [
+              {
+                "name": "其他",
+                "value": 1,
+                "children": [
+                  {
+                    "name": "其他",
+                    "value": 1,
+                    "children": [
+                      {
+                        "name": "com.imohoo.shanpao.ui.groups.company.home.CompanyHomeActivity",
+                        "value": 1,
+                        "children": [
+
+                        ],
+                        "nick": ""
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.RunningAndRidingActivity",
+                "value": 3,
+                "children": [
+                  {
+                    "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.ScreenLockActivity",
+                    "value": 2,
+                    "children": [
+
+                    ],
+                    "nick": ""
+                  }
+                ],
+                "nick": ""
+              },
+              {
+                "name": "cn.migu.shanpao.pedometer.StepScreenLockActivity",
+                "value": 3,
+                "children": [
+
+                ],
+                "nick": ""
+              }
+            ],
+            "nick": "首页"
+          },
+          {
+            "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.RunningAndRidingActivity",
+            "value": 5,
+            "children": [
+              {
+                "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.RunningAndRidingActivity",
+                "value": 3,
+                "children": [
+                  {
+                    "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.RunningAndRidingActivity",
+                    "value": 3,
+                    "children": [
+                      {
+                        "name": "其他",
+                        "value": 1,
+                        "children": [
+
+                        ]
+                      },
+                      {
+                        "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.ScreenLockActivity",
+                        "value": 2,
+                        "children": [
+
+                        ],
+                        "nick": ""
+                      }
+                    ],
+                    "nick": ""
+                  }
+                ],
+                "nick": ""
+              }
+            ],
+            "nick": ""
+          },
+          {
+            "name": "com.imohoo.shanpao.ui.motion.motionresult.MotionResultActivity",
+            "value": 1,
+            "children": [
+              {
+                "name": "com.imohoo.shanpao.ui.home.HomeActivity",
+                "value": 1,
+                "children": [
+
+                ],
+                "nick": "首页"
+              }
+            ],
+            "nick": ""
+          }
+        ],
+        "nick": ""
+      }
+    ]
+  },
+  "count": [
+    6117,
+    2697,
+    1641,
+    1041,
+    647
+  ]
+}

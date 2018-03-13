@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>善跑河流图demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="css/user_action/path.css" rel="stylesheet" type="text/css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <script src="js/i18n.js" type="text/javascript"></script>
+    <script src="js/cached_lay_reports.js" type="text/javascript"></script>
+    <script src="js/cached_lay_reports_cus.js" type="text/javascript"></script>
+   <!-- <script src="js/verdor/vue.min.js" type="text/javascript"></script>-->
+    <script src="js/d3.min.js" type="text/javascript" charset="UTF-8"></script>
+    <script src="js/user_action/flow.js" type="text/javascript"></script>
+    <script src="js/user_action/path_flow.js" type="text/javascript"></script>
+    <script src="js/user_action/path.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="mod mod1" id="path-flow">
+    <div class="mod-header radius clearfix">
+        <h2>
+            访问路径<a class="icon help poptips" action-frame="tip_visitPathNew" title=""></a>
+        </h2>
+    </div>
+    <div class="mod-body">
+        <div class="content">
+            <div class="steps-indicator">
+            </div>
+            <div id="chart">
+              <div class="error-info">数据加载错误或没有数据 <a href="http://bbs.umeng.com/thread-9166-1-1.html" target="_blank" style="color: #01A7AD">点击查看具体原因</a></div>
+              <div id="tip">
+                <h4 id="from"></h4>
+                <h4 id="to"></h4>
+                <p id="value"></p>
+            </div>
+              <!--<svg width="1500" height="600" style="display: none;">
+                  <g transform="translate(1,1)">
+                      <defs>
+                          <pattern id="innerPattern" x="0" y="0" width="1" height="10" patternUnits="objectBoundingBox">
+                              <rect x="0" y="0" width="2" height="500" fill="RGBA(255, 121, 68, 1)"></rect>
+                              <rect x="3" y="0" width="1" height="500" fill="RGBA(255, 121, 68, 1)"></rect>
+                              <rect x="5" y="0" width="1" height="500" fill="RGBA(255, 121, 68, 0.7)"></rect>
+                              <rect x="7" y="0" width="1" height="500" fill="RGBA(255, 121, 68, 0.5)"></rect>
+                              <rect x="9" y="0" width="1" height="500" fill="RGBA(255, 121, 68, 0.2)"></rect>
+                          </pattern>
+                      </defs>
+                  </g>
+              </svg>-->
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

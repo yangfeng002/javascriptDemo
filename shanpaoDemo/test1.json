@@ -1,0 +1,49 @@
+{
+  "count1": [
+    "12",
+    "8",
+    "7",
+    "7",
+    "7"
+  ],
+  "data": {
+    "name": "StartPoint",
+    "value": "0",
+    "children": [
+      {
+        "name": "com.imohoo.shanpao.ui.first.StartupActivity",
+        "value": "4",
+        "children": [
+          {
+            "name": "com.imohoo.shanpao.ui.first.UnLoginActivity",
+            "value": "1",
+            "children": [
+              {
+                "name": "com.imohoo.shanpao.ui.first.UnLoginActivity",
+                "value": "1",
+                "children": [
+                  {
+                    "name": "com.cmcc.migusso.sdk.activity.LoginActivity",
+                    "value": "1",
+                    "pvalue": "1",
+                    "children":[]
+                  }
+                ],
+                "pvalue": "1"
+              }
+            ],
+            "pvalue": "1"
+          }
+        ],
+        "pvalue": "12"
+      }
+    ]
+  },
+  "count": [
+    "4",
+    "6",
+    "7",
+    "7",
+    "7"
+  ]
+}
