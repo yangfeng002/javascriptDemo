@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>请求加载的loading</title>
+    <script type="text/javascript" charset="UTF-8" src="../lib/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="lib/showloading/jquery.showLoading.js"></script>
+    <link rel="stylesheet" href="lib/showloading/showLoading.css" type="text/css"/>
+    <script type="text/javascript" charset="UTF-8">
+        $(function () {
+            $(window).showLoading({indicatorID: 'window'});
+            setTimeout(function () {
+                $(window).hideLoading({indicatorID: 'window'});
+            },3000)
+        })
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

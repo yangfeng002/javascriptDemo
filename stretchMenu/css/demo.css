@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/* 
+*Created by fengyang on 2018/3/13
+**/
+body {
+  margin: 0;
+  padding: 0;
+  font: 14px/1.5 "微软雅黑";
+  background: #feeded;
+}
+ul {
+  padding: 0;
+}
+ul li {
+  list-style: none;
+}
+ul .item {
+  /*使a宽度不变，可以设置其父元素宽度*/
+  width: 200px;
+}
+ul .item > a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  height: 30px;
+  /* width:200px;*/
+  background: #990020;
+  line-height: 30px;
+  padding-left: 5px;
+  border-left: 12px solid #711515;
+}
+ul .item > a:hover {
+  color: #ece5a4;
+}
+ul .item .uitem {
+  display: none;
+}
+ul .item .uitem li {
+  border-bottom: 1px solid #ed9f9f;
+}
+ul .item .uitem a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  height: 30px;
+  /* width:200px;*/
+  background: #E85070;
+  line-height: 30px;
+  padding-left: 5px;
+  border-left: 35px solid #A71F1F;
+}

@@ -1,0 +1,18 @@
+.loading-indicator-bars {
+		background-image: url('loading2.gif');
+		width: 150px;
+	}
+
+.loading-indicator {
+	height: 80px;
+	width: 80px;
+	background: url('loading2.gif');
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.loading-indicator-overlay {
+	background-color: #333;
+	opacity: 0.5;
+	filter: alpha(opacity = 50);
+}
