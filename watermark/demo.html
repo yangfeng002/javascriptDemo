@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水印效果测试</title>
+    <link rel="stylesheet" href="css/demo.css"/>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="js/watermark.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+        $(function () {
+            //调用水印样式
+            $.addWaterMark($(".chartslist").height());
+        })
+    </script>
+</head>
+<body>
+    <div class="chartslist chartslist1">
+
+    </div>
+    <!--插入水印部分-->
+    <div class="transparentbox">
+        <p>
+           user
+        </p>
+    </div>
+</body>
+</html>

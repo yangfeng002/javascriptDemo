@@ -1,0 +1,62 @@
+/* 
+*Created by fengyang on 2018/3/20
+**/
+.chartslist{
+    height:100%;
+    background:#e5e5e5;
+}
+/*水印部分css样式开始*/
+div.transparentbox:nth-child(3n+1) {
+    margin-top:50%;
+    margin-left:2%;
+}
+
+div.transparentbox:nth-child(3n+2) {
+    margin-left:40%;
+}
+
+div.transparentbox:nth-child(3n+3) {
+    margin-left:81%;
+}
+
+
+div.transparentbox {
+    /*width:10px;
+    height:40px;
+    background-color:transparent;
+    border-color: #CD853F;
+    opacity:0.28;
+    position:relative;
+    filter:alpha(opacity=28);
+    transform:rotate(-18deg);
+    -ms-transform:rotate(-18deg); !* Internet Explorer *!
+    -moz-transform:rotate(-18deg); !* Firefox *!
+    -webkit-transform:rotate(-18deg); !* Safari 和 Chrome *!
+    -o-transform:rotate(-18deg); !* Opera *!*/
+    width:auto;
+    height:40px;
+    background-color:transparent;
+    border-color: #CD853F;
+    opacity:0.28;
+    position:relative;
+    overflow: hidden;
+    white-space: nowrap;
+    filter:alpha(opacity=28);
+    transform:rotate(-18deg);
+    -ms-transform:rotate(-18deg); /* Internet Explorer */
+    -moz-transform:rotate(-18deg); /* Firefox */
+    -webkit-transform:rotate(-18deg); /* Safari 和 Chrome */
+    -o-transform:rotate(-18deg); /* Opera */
+    pointer-events:none;/*解决水印 覆盖底层事件问题*/
+}
+
+
+div.transparentbox p {
+    margin: 0 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    color: #000;
+    line-height: 30px;
+}
+/*水印部分css样式结束*/

@@ -1,0 +1,105 @@
+{
+  "data": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+
+                        ],
+                        "name": "cn.migu.shanpao.pedometer.StepScreenLockActivity",
+                        "value": "95"
+                      },
+                      {
+                        "children": [
+
+                        ],
+                        "name": "com.imohoo.shanpao.ui.first.StartupActivity",
+                        "value": "1"
+                      }
+                    ],
+                    "name": "cn.migu.shanpao.pedometer.StepScreenLockActivity",
+                    "value": "19"
+                  }
+                ],
+                "name": "cn.migu.shanpao.pedometer.StepScreenLockActivity",
+                "value": "25"
+              }
+            ],
+            "name": "cn.migu.shanpao.pedometer.StepScreenLockActivity",
+            "value": "50"
+          }
+        ],
+        "name": "cn.migu.shanpao.pedometer.StepScreenLockActivity",
+        "value": "420"
+      },
+      {
+        "children": [
+          {
+            "children": [
+
+            ],
+            "name": "com.imohoo.shanpao.external.thirdauth.PreAuthActivity",
+            "value": "1"
+          }
+        ],
+        "name": "com.tencent.connect.common.AssistActivity",
+        "value": "2"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+
+                ],
+                "name": "com.imohoo.shanpao.ui.setting.SettingActivity",
+                "value": "1"
+              }
+            ],
+            "name": "com.imohoo.shanpao.common.webview.MyWebViewActivity",
+            "value": "1"
+          }
+        ],
+        "name": "com.imohoo.shanpao.ui.setting.SettingActivity",
+        "value": "3"
+      },
+      {
+        "children": [
+          {
+            "children": [
+
+            ],
+            "name": "cn.migu.shanpao.pedometer.StepScreenLockActivity",
+            "value": "1"
+          }
+        ],
+        "name": "com.imohoo.shanpao.ui.sportcamera.SportShareActivity",
+        "value": "9"
+      },
+      {
+        "children": [
+
+        ],
+        "name": "com.imohoo.shanpao.ui.setting.PermissionSetActivity",
+        "value": "1"
+      }
+    ],
+    "name": "StartPoint",
+    "value": "0"
+  },
+  "count": [
+    "14385",
+    "1894",
+    "1478",
+    "1365",
+    "16342"
+  ]
+}

@@ -13,7 +13,7 @@ d3.flow = function() {
         heighScale = 0,  // 高度比例
         nodes = [],
         links = [],
-        endScale = d3.scale.linear().range([3, 10]);
+        endScale = d3.scale.linear().range([3, 10]),size;
 
     /*
      *  private methods
