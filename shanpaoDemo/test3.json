@@ -3,6 +3,13 @@
     "children": [
       {
         "children": [
+
+        ],
+        "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.RunningAndRidingActivity",
+        "value": "33"
+      },
+      {
+        "children": [
           {
             "children": [
               {
@@ -13,93 +20,337 @@
                         "children": [
 
                         ],
-                        "name": "cn.migu.shanpao.pedometer.StepScreenLockActivity",
-                        "value": "95"
+                        "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.ScreenLockActivity",
+                        "value": "25"
+                      }
+                    ],
+                    "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.ScreenLockActivity",
+                    "value": "35"
+                  }
+                ],
+                "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.RunningAndRidingActivity",
+                "value": "87"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+
+                        ],
+                        "name": "com.imohoo.shanpao.common.webview.CampaignActivity",
+                        "value": "25"
+                      }
+                    ],
+                    "name": "com.imohoo.shanpao.ui.home.HomeActivity",
+                    "value": "64"
+                  }
+                ],
+                "name": "com.imohoo.shanpao.ui.motion.motionresult.MotionResultActivity",
+                "value": "81"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+
+                        ],
+                        "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.ScreenLockActivity",
+                        "value": "23"
                       },
                       {
                         "children": [
 
                         ],
-                        "name": "com.imohoo.shanpao.ui.first.StartupActivity",
-                        "value": "1"
+                        "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.RunningAndRidingActivity",
+                        "value": "26"
                       }
                     ],
-                    "name": "cn.migu.shanpao.pedometer.StepScreenLockActivity",
-                    "value": "19"
+                    "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.ScreenLockActivity",
+                    "value": "50"
                   }
                 ],
-                "name": "cn.migu.shanpao.pedometer.StepScreenLockActivity",
-                "value": "25"
+                "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.ScreenLockActivity",
+                "value": "69"
               }
             ],
-            "name": "cn.migu.shanpao.pedometer.StepScreenLockActivity",
-            "value": "50"
-          }
-        ],
-        "name": "cn.migu.shanpao.pedometer.StepScreenLockActivity",
-        "value": "420"
-      },
-      {
-        "children": [
+            "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.RunningAndRidingActivity",
+            "value": "283"
+          },
           {
             "children": [
 
             ],
-            "name": "com.imohoo.shanpao.external.thirdauth.PreAuthActivity",
-            "value": "1"
-          }
-        ],
-        "name": "com.tencent.connect.common.AssistActivity",
-        "value": "2"
-      },
-      {
-        "children": [
+            "name": "com.imohoo.shanpao.common.webview.MyWebViewActivity",
+            "value": "39"
+          },
           {
             "children": [
+
+            ],
+            "name": "com.imohoo.shanpao.ui.first.StartupActivity",
+            "value": "24"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+
+                    ],
+                    "name": "com.imohoo.shanpao.ui.motion.motionresult.MotionResultActivity",
+                    "value": "28"
+                  },
+                  {
+                    "children": [
+
+                    ],
+                    "name": "com.imohoo.shanpao.ui.home.HomeActivity",
+                    "value": "34"
+                  }
+                ],
+                "name": "com.imohoo.shanpao.ui.motion.motionrecord.SportRecordActivity",
+                "value": "72"
+              },
+              {
+                "children": [
+
+                ],
+                "name": "com.imohoo.shanpao.ui.training.TrainingNormalDetailActivity",
+                "nick": "è®­ç»ƒè¯¦æƒ…é¡µ",
+                "value": "7"
+              },
+              {
+                "children": [
+
+                ],
+                "name": "com.imohoo.shanpao.ui.motion.runassess.activity.RunAssessGuideActivity",
+                "value": "21"
+              },
+              {
+                "children": [
+
+                ],
+                "name": "com.imohoo.shanpao.ui.person.PeopleDetailsActivity",
+                "value": "21"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+
+                    ],
+                    "name": "com.imohoo.shanpao.ui.home.HomeActivity",
+                    "value": "25"
+                  }
+                ],
+                "name": "com.imohoo.shanpao.ui.first.StartupActivity",
+                "value": "26"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+
+                        ],
+                        "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.RunningAndRidingActivity",
+                        "value": "38"
+                      },
+                      {
+                        "children": [
+
+                        ],
+                        "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.ScreenLockActivity",
+                        "value": "65"
+                      }
+                    ],
+                    "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.RunningAndRidingActivity",
+                    "value": "113"
+                  },
+                  {
+                    "children": [
+                      {
+                        "children": [
+
+                        ],
+                        "name": "com.imohoo.shanpao.ui.home.HomeActivity",
+                        "value": "28"
+                      },
+                      {
+                        "children": [
+
+                        ],
+                        "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.RunningAndRidingActivity",
+                        "value": "29"
+                      }
+                    ],
+                    "name": "com.imohoo.shanpao.ui.home.HomeActivity",
+                    "value": "77"
+                  }
+                ],
+                "name": "com.imohoo.shanpao.ui.home.HomeActivity",
+                "value": "257"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+
+                        ],
+                        "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.RunningAndRidingActivity",
+                        "value": "73"
+                      }
+                    ],
+                    "name": "com.imohoo.shanpao.ui.home.HomeActivity",
+                    "value": "114"
+                  }
+                ],
+                "name": "com.imohoo.shanpao.common.webview.MyWebViewActivity",
+                "value": "128"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+
+                        ],
+                        "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.ScreenLockActivity",
+                        "value": "301"
+                      },
+                      {
+                        "children": [
+
+                        ],
+                        "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.RunningAndRidingActivity",
+                        "value": "35"
+                      }
+                    ],
+                    "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.ScreenLockActivity",
+                    "value": "345"
+                  },
+                  {
+                    "children": [
+                      {
+                        "children": [
+
+                        ],
+                        "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.RunningAndRidingActivity",
+                        "value": "37"
+                      },
+                      {
+                        "children": [
+
+                        ],
+                        "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.ScreenLockActivity",
+                        "value": "190"
+                      }
+                    ],
+                    "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.RunningAndRidingActivity",
+                    "value": "242"
+                  }
+                ],
+                "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.RunningAndRidingActivity",
+                "value": "663"
+              },
               {
                 "children": [
 
                 ],
                 "name": "com.imohoo.shanpao.ui.setting.SettingActivity",
-                "value": "1"
+                "value": "17"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+
+                    ],
+                    "name": "com.imohoo.shanpao.ui.im.ui.RIM_ConversationActivity",
+                    "value": "24"
+                  }
+                ],
+                "name": "com.imohoo.shanpao.ui.im.ui.RIM_ConversationListActvity",
+                "value": "31"
+              },
+              {
+                "children": [
+
+                ],
+                "name": "com.imohoo.shanpao.ui.medal.ui.MedalInfoActivity",
+                "nick": "æˆ‘-å‹‹ç« é¦†-å…·ä½“å‹‹ç« åŽçš„é¡µé¢",
+                "value": "11"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+
+                        ],
+                        "name": "com.imohoo.shanpao.ui.motion.outdoorrunandride.activity.RunningAndRidingActivity",
+                        "value": "25"
+                      }
+                    ],
+                    "name": "com.imohoo.shanpao.ui.home.HomeActivity",
+                    "value": "62"
+                  }
+                ],
+                "name": "com.imohoo.shanpao.common.webview.CampaignActivity",
+                "value": "78"
               }
             ],
-            "name": "com.imohoo.shanpao.common.webview.MyWebViewActivity",
-            "value": "1"
-          }
-        ],
-        "name": "com.imohoo.shanpao.ui.setting.SettingActivity",
-        "value": "3"
-      },
-      {
-        "children": [
+            "name": "com.imohoo.shanpao.ui.home.HomeActivity",
+            "value": "1577"
+          },
           {
             "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
 
+                        ],
+                        "name": "com.imohoo.shanpao.ui.home.HomeActivity",
+                        "value": "76"
+                      }
+                    ],
+                    "name": "com.imohoo.shanpao.ui.first.LoginingActivity",
+                    "value": "99"
+                  }
+                ],
+                "name": "com.cmcc.migusso.sdk.activity.LoginActivity",
+                "value": "150"
+              }
             ],
-            "name": "cn.migu.shanpao.pedometer.StepScreenLockActivity",
-            "value": "1"
+            "name": "com.imohoo.shanpao.ui.first.UnLoginActivity",
+            "value": "158"
           }
         ],
-        "name": "com.imohoo.shanpao.ui.sportcamera.SportShareActivity",
-        "value": "9"
-      },
-      {
-        "children": [
-
-        ],
-        "name": "com.imohoo.shanpao.ui.setting.PermissionSetActivity",
-        "value": "1"
+        "name": "com.imohoo.shanpao.ui.first.StartupActivity",
+        "value": "2579"
       }
     ],
     "name": "StartPoint",
     "value": "0"
   },
   "count": [
-    "14385",
-    "1894",
-    "1478",
-    "1365",
-    "16342"
+    "2799",
+    "2140",
+    "1743",
+    "1328",
+    "1008"
   ]
 }
